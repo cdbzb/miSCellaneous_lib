@@ -48,8 +48,8 @@
 	}
 
 	p { ^Pbind(*this.pa)}
-	pm { |sym| ^Pmono(sym, *this.pa)}
-	pma { |sym| ^PmonoArtic(sym, *this.pa)}
+	pm { |sym| sym = sym ? (this.asEvent.at(\instrument));^Pmono(sym, *this.pa)}
+	pma { |sym| sym = sym ? (this.asEvent.at(\instrument));^PmonoArtic(sym, *this.pa)}
 	pbf { |sym| ^Pbindef(sym, *this.pa)}
 
 	pp { |clock, protoEvent, quant| ^this.p.play(clock, protoEvent, quant)}
